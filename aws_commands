@@ -1,0 +1,5 @@
+aws ec2 describe-instances \
+--query "Reservations[*].Instances[*].{PublicIP:PublicIpAddress,Type:InstanceType,Name:Tags[?Key=='Name']|[0].Value,Status:State.Name,Instance:InstanceId}"  \ 
+--filters "Name=instance-state-name,Values=*" "Name=tag:Name,Values='*'"  \
+--output table
+
