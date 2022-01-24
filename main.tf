@@ -32,6 +32,7 @@ sudo mkdir -p /home/ec2-user/efs
 sudo chown ec2-user /home/ec2-user/efs
 echo 'fs-0799438a25f1315ec.efs.us-east-2.amazonaws.com:/ /home/ec2-user/efs nfs4 nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport' >>  /etc/fstab
 sudo mount -a
+yum install -y nginx
 EOF
 
 
